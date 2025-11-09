@@ -1,12 +1,12 @@
 const PRODUCTS = [
-{id:1,name:"Snug Pines Orange Autumn",price:15,sizes:["XS","S","M","L","XL"],img:"https://via.placeholder.com/400x300?text=Snug+Pines+Orange+Autumn"},
-{id:2,name:"Snug Pines Acorn Edition",price:15,sizes:["XS","S","M","L","XL"],img:"https://via.placeholder.com/400x300?text=Snug+Pines+Acorn+Edition"},
-{id:3,name:"Snug Pines Birch",price:15,sizes:["XS","S","M","L","XL"],img:"https://via.placeholder.com/400x300?text=Snug+Pines+Birch"},
-{id:4,name:"Snug Pines Original Grey",price:15,sizes:["XS","S","M","L","XL"],img:"https://via.placeholder.com/400x300?text=Snug+Pines+Original+Grey"},
-{id:5,name:"Snug Pines Green Fall",price:15,sizes:["XS","S","M","L","XL"],img:"https://via.placeholder.com/400x300?text=Snug+Pines+Green+Fall"},
-{id:6,name:"Snug Pines Fall Hoodie",price:15,sizes:["XS","S","M","L","XL"],img:"https://via.placeholder.com/400x300?text=Snug+Pines+Fall+Hoodie"},
-{id:7,name:"Snug Pines Pine Forest",price:15,sizes:["XS","S","M","L","XL"],img:"https://via.placeholder.com/400x300?text=Snug+Pines+Pine+Forest"},
-{id:8,name:"Snug Pines Original",price:15,sizes:["XS","S","M","L","XL"],img:"https://via.placeholder.com/400x300?text=Snug+Pines+Original"}
+{id:1,name:"Snug Pines Orange Autumn",price:15,sizes:["XS","S","M","L","XL"],img:"Snug_pines_orange_autumn_hoodie.JPG"},
+{id:2,name:"Snug Pines Acorn Edition",price:15,sizes:["XS","S","M","L","XL"],img:"Snug _pines_acorn_edition_hoodie.JPG"},
+{id:3,name:"Snug Pines Birch",price:15,sizes:["XS","S","M","L","XL"],img:"Snug_pines_birch_hoodie.JPG"},
+{id:4,name:"Snug Pines Original Grey",price:15,sizes:["XS","S","M","L","XL"],img:"Snig_pines_original_grey_hoodie.JPG"},
+{id:5,name:"Snug Pines Green Fall",price:15,sizes:["XS","S","M","L","XL"],img:"Snug_pines_green_hoodie.JPG"},
+{id:6,name:"Snug Pines Fall Hoodie",price:15,sizes:["XS","S","M","L","XL"],img:"Snug_pines_fall_hoodie.JPG"},
+{id:7,name:"Snug Pines Pine Forest",price:15,sizes:["XS","S","M","L","XL"],img:"Snug_pines_pine_hoodie.JPG"},
+{id:8,name:"Snug Pines Original",price:15,sizes:["XS","S","M","L","XL"],img:"Snug_pines_original_hoodie.JPG"}
 ];
 
 function qs(sel){return document.querySelector(sel)}
