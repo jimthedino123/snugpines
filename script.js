@@ -1,8 +1,9 @@
+<script>
 const PRODUCTS = [
 {id:1,name:"Snug Pines Orange Autumn",price:15,sizes:["XS","S","M","L","XL"],img:"Snug_pines_orange_autumn_hoodie.JPG"},
 {id:2,name:"Snug Pines Acorn Edition",price:15,sizes:["XS","S","M","L","XL"],img:"Snug _pines_acorn edition_hoodie.JPG"},
 {id:3,name:"Snug Pines Birch",price:15,sizes:["XS","S","M","L","XL"],img:"Snug_pines_birch_hoodie.JPG"},
-{id:4,name:"Snug Pines Original Grey",price:15,sizes:["XS","S","M","L","XL"],img:"Snig_pines_original_grey_hoodie.JPG"},
+{id:4,name:"Snug Pines Original Grey",price:15,sizes:["XS","S","M","L","XL"],img:"Snug_pines_original_grey_hoodie.JPG"},
 {id:5,name:"Snug Pines Green Fall",price:15,sizes:["XS","S","M","L","XL"],img:"Snug_pines_green_hoodie.JPG"},
 {id:6,name:"Snug Pines Fall Hoodie",price:15,sizes:["XS","S","M","L","XL"],img:"Snug_pines_fall_hoodie.JPG"},
 {id:7,name:"Snug Pines Pine Forest",price:15,sizes:["XS","S","M","L","XL"],img:"Snug_pines_pine_hoodie.JPG"},
@@ -59,9 +60,12 @@ productsEl?.addEventListener('click',e=>{
   const btn=e.target.closest('button');
   if(!btn) return;
   const id=Number(btn.dataset.id);
-  const found=cart.find(i=>i.id===id);
+  const card=btn.closest('.card');
+  const sizeSel=card.querySelector('select');
+  const size=sizeSel.value;
+  const found=cart.find(i=>i.id===id && i.size===size);
   if(found) found.qty++;
-  else cart.push({id,qty:1});
+  else cart.push({id,qty:1,size});
   updateCartUI();
   openCart();
 });
@@ -75,7 +79,21 @@ placeOrderBtn?.addEventListener('click',()=>{
   const name=qs('#cust-name').value.trim();
   const email=qs('#cust-email').value.trim();
   if(!name||!email){alert('Please enter name and email');return;}
-  alert(`Thanks for shopping, ${name}! Your order has been sent (demo).`);
+
+  let total=0;
+  let itemsText=cart.map(item=>{
+    const prod=PRODUCTS.find(p=>p.id===item.id);
+    total+=prod.price*item.qty;
+    return `${prod.name} (${item.size}) × ${item.qty} - £${(prod.price*item.qty).toFixed(2)}`;
+  }).join('%0A'); // line breaks for email
+
+  const subject = encodeURIComponent(`Order from ${name}`);
+  const body = encodeURIComponent(
+    `Name: ${name}%0AEmail: ${email}%0A%0AItems:%0A${itemsText}%0A%0ATotal: £${total.toFixed(2)}%0A%0AThank you!`
+  );
+
+  window.location.href = `mailto:guineapigpatch@hotmail.com?subject=${subject}&body=${body}`;
+
   cart=[];
   updateCartUI();
   cartPanel?.classList.remove('open');
@@ -85,3 +103,4 @@ function openCart(){cartPanel?.classList.add('open');cartPanel?.setAttribute('ar
 
 renderProducts();
 updateCartUI();
+</script>updateCartUI();
