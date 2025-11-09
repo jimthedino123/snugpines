@@ -1,6 +1,6 @@
 const PRODUCTS = [
 {id:1,name:"Snug Pines Orange Autumn",price:15,sizes:["XS","S","M","L","XL"],img:"Snug_pines_orange_autumn_hoodie.JPG"},
-{id:2,name:"Snug Pines Acorn Edition",price:15,sizes:["XS","S","M","L","XL"],img:"Snug _pines_acorn_edition_hoodie.JPG"},
+{id:2,name:"Snug Pines Acorn Edition",price:15,sizes:["XS","S","M","L","XL"],img:"Snug _pines_acorn edition_hoodie.JPG"},
 {id:3,name:"Snug Pines Birch",price:15,sizes:["XS","S","M","L","XL"],img:"Snug_pines_birch_hoodie.JPG"},
 {id:4,name:"Snug Pines Original Grey",price:15,sizes:["XS","S","M","L","XL"],img:"Snig_pines_original_grey_hoodie.JPG"},
 {id:5,name:"Snug Pines Green Fall",price:15,sizes:["XS","S","M","L","XL"],img:"Snug_pines_green_hoodie.JPG"},
